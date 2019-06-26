@@ -4,17 +4,31 @@
     <meta charset="UTF-8">
     <title>Todo List</title>
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <script defer src="todoList.js"></script>
     <script defer src="main.js"></script>
 </head>
-<body>
-<div data-component="todo-list">
-    <input type="text" data-selector="input">
+<body class="container">
+<div class="row justify-content-md-center mt-3">
+    <div data-component="todo-list" class="card col col-lg-6">
+        <div class="card-body">
+            <form data-selector="form">
+                <div class="form-group">
+                    <label for="todo">
+                        New todo:
+                    </label>
+                    <input class="form-control" id="todo"
+                           name="todo"
+                           autocomplete="off"
+                           placeholder="Enter your todo...">
+                </div>
+            </form>
 
-    <ul data-selector="list">
-        <li>Todod smth</li>
-        <li>Todod smth other</li>
-    </ul>
+            <ul class="list-group" data-selector="list">
+            </ul>
+        </div>
+    </div>
 </div>
 </body>
 </html>
