@@ -1,5 +1,3 @@
-const app = new TodoList({
-  element: document.querySelector('[data-component="todo-list"]')
+const app = new App({
+  element: document.querySelector('[data-component="app"]')
 })
-
-console.log(app)

@@ -6,14 +6,18 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <script defer src="todoList.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+    <script defer src="component.js"></script>
+    <script defer src="list.js"></script>
+    <script defer src="form.js"></script>
+    <script defer src="app.js"></script>
     <script defer src="main.js"></script>
 </head>
 <body class="container">
 <div class="row justify-content-md-center mt-3">
-    <div data-component="todo-list" class="card col col-lg-6">
+    <div data-component="app" class="card col col-lg-6">
         <div class="card-body">
-            <form data-selector="form">
+            <form data-component="form">
                 <div class="form-group">
                     <label for="todo">
                         New todo:
@@ -25,7 +29,7 @@
                 </div>
             </form>
 
-            <ul class="list-group" data-selector="list">
+            <ul class="list-group" data-component="list">
             </ul>
         </div>
     </div>
