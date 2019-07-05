@@ -1,19 +1,24 @@
+import {Component} from './component'
+import Mustache from 'mustache'
+
 const todoTemplate = `
-<li class="list-group-item d-flex justify-content-between" data-key="{{id}}">
+{{#todos}}
+  <li class="list-group-item d-flex justify-content-between" data-key="{{id}}">
     {{text}}
     <button type="button" class="btn btn-link">&#x2715</button>
-</li>
+  </li>
+{{/todos}}
 `
 
-class List extends Component {
+export class List extends Component {
   constructor(options) {
     super(options)
 
     this.$element.addEventListener('click', this._removeClickHandler.bind(this))
   }
 
-  add(todo) {
-    this._render(todo)
+  add(todos) {
+    this._render(todos)
   }
 
   _remove(id) {
@@ -30,11 +35,11 @@ class List extends Component {
 
 
     const elementToDelete = event.target.closest('li')
-    this._remove(elementToDelete.dataset.key)
+    this._remove(parseInt(elementToDelete.dataset.key))
   }
 
-  _render(todo) {
-    const todoElement = Mustache.render(todoTemplate, todo)
+  _render(todos) {
+    const todoElement = Mustache.render(todoTemplate, {todos})
 
     this.$element.insertAdjacentHTML('afterbegin', todoElement)
   }

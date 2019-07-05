@@ -1,4 +1,6 @@
-class Form extends Component{
+import {Component} from './component'
+
+export class Form extends Component{
   constructor(options) {
     super(options)
 

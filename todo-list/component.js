@@ -1,4 +1,4 @@
-class Component {
+export class Component {
   constructor({element}) {
     this.$element = element
   }

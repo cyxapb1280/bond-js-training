@@ -1,0 +1,14 @@
+{
+  "todos": [
+    {
+      "id": 0,
+      "text": "Do smth important",
+      "done": true
+    },
+    {
+      "id": 1,
+      "text": "Do smth important too",
+      "done": false
+    }
+  ]
+}
